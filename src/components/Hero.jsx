@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { InvitationModal } from "./InvitationModal";
-import dashboard from "../assets/images/dashboard.jpg";
+import dashboard from "../assets/images/ferenc-almasi-L8KQIPCODV8-unsplash.jpg";
 
 export const Hero = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -18,7 +18,7 @@ export const Hero = () => {
           transition={{ duration: 0.5 }}
         >
           <div className="text-customSecondary text-sm sm:text-base  mb-6 sm:mt-32 mt-16  font-bold">
-            Discover new data flow
+            龙年大吉
           </div>
         </motion.div>
         <motion.div
@@ -27,11 +27,11 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.05 }}
         >
           <div className="text-5xl sm:text-6xl lg:text-7xl xl:text-7xl font-bold tracking-wide  text-white  px-8 sm:px-8 md:px-20 lg:px-4">
-            <span className="inline md:hidden">Analytics</span>
-            <span className="hidden md:inline">Analytic tools suite</span>
+            <span className="inline md:hidden">Spans</span>
+            <span className="hidden md:inline">Spans 设计</span>
           </div>
           <div className="mt-2 sm:mt-2 text-4xl sm:text-6xl lg:text-7xl xl:text-7xl font-bold tracking-wide  text-white  px-8 sm:px-20 md:px-24 lg:px-24">
-            for developers
+            为了开发者们
           </div>
         </motion.div>
         <motion.div
@@ -40,8 +40,7 @@ export const Hero = () => {
           transition={{ duration: 0.5, delay: 0.1 }}
         >
           <div className="text-customGrayText text-sm lg:text-base xl:text-lg sm:text-base mt-10 px-12 sm:px-48 ">
-            Experience seamless business integrations and powerful insights with
-            our cutting-edge analytic tools.
+            集成开源产品，重新定义属于国区的优秀产品
           </div>
         </motion.div>
         <motion.div

@@ -5,9 +5,8 @@ import { GithubIcon } from '../assets/icons/GithubIcon'
 
 const navbarLinks = [
   { label: '首页', href: '#home', ariaLabel: 'Home' },
-  { label: 'Features', href: '#features', ariaLabel: 'Features' },
-  { label: 'Feedback', href: '#feedback', ariaLabel: 'Feedback' },
-  { label: 'FAQ', href: '#FAQ', ariaLabel: 'FAQ' }
+  { label: '特征', href: '#features', ariaLabel: 'Features' },
+  { label: '常见问题', href: '#FAQ', ariaLabel: 'FAQ' },
 ]
 
 export const Navbar = () => {
@@ -22,11 +21,7 @@ export const Navbar = () => {
           transition={{ duration: 0.3 }}
           exit={{ opacity: 0 }}
         >
-          <a
-            className="navbar-link"
-            href="#home"
-            aria-label="Home"
-          >
+          <a className="navbar-link" href="#home" aria-label="Home">
             <div className="flex justify-start items-center grow basis-0">
               <div className="text-white mr-2 text-6xl">
                 <SpansLogo />
@@ -76,9 +71,23 @@ export const Navbar = () => {
           className="lg:hidden flex flex-col  px-2 py-3 border-solid border border-gray-600 rounded-md cursor-pointer hover:bg-customDarkBg2"
           onClick={() => setIsOpen(!isOpen)}
         >
-          <div className="w-5 h-0.5 bg-gray-500  mb-1"></div>
-          <div className="w-5 h-0.5 bg-gray-500  mb-1"></div>
-          <div className="w-5 h-0.5 bg-gray-500 "></div>
+          <div
+            className={`w-5 h-0.5 bg-gray-500 mb-1 transition-all ${
+              isOpen
+                ? '-rotate-45 translate-y-1.5'
+                : '-rotate-0 translate-y-0'
+            }`}
+          ></div>
+          <div
+            className={`w-5 h-0.5 bg-gray-500 mb-1 transition-all ${
+              isOpen ? 'opacity-0' : 'opacity-100'
+            }`}
+          ></div>
+          <div
+            className={`w-5 h-0.5 bg-gray-500 transition-all ${
+              isOpen ? 'rotate-45 -translate-y-1.5' : 'rotate-0 -translate-y-0'
+            }`}
+          ></div>
         </div>
       </div>
       {/* Mobile navbar */}
@@ -108,12 +117,11 @@ export const Navbar = () => {
               ))}
               <a
                 className="text-white custom-border-gray rounded-xl
-           bg-customDarkBg2 hover:bg-customDarkBg3  border-gray-700 pl-6 pr-8 pt-2 pb-2 text-sm flex"
+           bg-customDarkBg2 hover:bg-customDarkBg3  border-gray-700 py-2 px-6 text-sm flex"
                 href="https://github.com/matt765/Tidestream"
                 target="_blank"
               >
                 <GithubIcon />
-                Source code
               </a>
             </div>
           </motion.div>
