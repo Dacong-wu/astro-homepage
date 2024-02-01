@@ -36,25 +36,6 @@ export const Navbar = () => {
           transition={{ duration: 0.3 }}
           exit={{ opacity: 0 }}
         >
-          <div className="hidden lg:flex h-full pl-12 pb-2">
-            {navbarLinks.map(({ href, label, ariaLabel }) => (
-              <a
-                className="navbar-link"
-                href={href}
-                aria-label={ariaLabel}
-                key={label}
-              >
-                {label}
-              </a>
-            ))}
-          </div>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.3 }}
-          exit={{ opacity: 0 }}
-        >
           <div className="grow basis-0 justify-end hidden lg:flex">
             <a
               className="text-white custom-border-gray rounded-xl
@@ -104,17 +85,7 @@ export const Navbar = () => {
         items-center gap-10 pb-10 border-y border-solid border-customDarkBg3 pt-10
         "
             >
-              {navbarLinks.map(({ label, href, ariaLabel }) => (
-                <a
-                  key={href}
-                  className="navbar-link"
-                  href={href}
-                  onClick={() => setIsOpen(false)}
-                  aria-label={ariaLabel}
-                >
-                  {label}
-                </a>
-              ))}
+              
               <a
                 className="text-white custom-border-gray rounded-xl
            bg-customDarkBg2 hover:bg-customDarkBg3  border-gray-700 py-2 px-6 text-sm flex"
