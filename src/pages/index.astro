@@ -1,22 +1,96 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { Hero } from '../components/Hero.jsx'
 import { Navbar } from '../components/Navbar.jsx'
-import { Features1 } from '../components/Features1.jsx'
-import { Features2 } from '../components/Features2.jsx'
-import { Testimonials } from '../components/Testimonials.jsx'
-import { FeaturesDiagonal } from '../components/FeaturesDiagonal.jsx'
-import { FAQ } from '../components/FAQ.jsx'
-import { Brands } from '../components/Brands.jsx'
-import { Divider } from '../components/Divider'
 import { Footer } from '../components/Footer.jsx'
-import { ScrollUpButton } from '../components/ScrollUpButton'
-import '../styles/Theme.css'
-import '../styles/Diagonals.css'
+import { Icon } from 'astro-icon/components'
 ---
 
-<Layout title={import.meta.env.SITE_NAEM}>
+<Layout title="spans">
   <Navbar client:load />
-  <FAQ client:load />
-  <ScrollUpButton client:load />
+  <div class="max-w-4xl mx-auto p-8 bg-gradient-to-r my-12">
+    <h1 class="text-5xl font-bold text-blue-700 mb-8 border-b-4 border-blue-500 pb-2 flex items-center">
+      <Icon
+        name="mdi:file-document-outline"
+        class="mr-4"
+      />
+      介绍 spans
+    </h1>
+    <p class="mb-8 text-lg text-gray-700 leading-relaxed">
+      欢迎来到 spans 的世界！spans 是一个由我自创的名称，代表着一系列的开源项目，旨在为开发者提供实用的工具和资源。无论你是新手还是经验丰富的开发者，spans
+      都有适合你的内容。
+    </p>
+
+    <div class="bg-gradient-to-r from-blue-50 to-white p-8 rounded shadow-md mb-12">
+      <h2 class="text-3xl font-semibold text-gray-900 mb-6 flex items-center">
+        <Icon
+          name="mdi:target-variant"
+          class="mr-4"
+        />
+        我们的目标
+      </h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        我们的目标是创建高质量、易于使用的开源软件，帮助开发者提高效率，解决实际问题。我们相信，通过分享知识和资源，我们可以一起推动技术的进步。
+      </p>
+    </div>
+
+    <div class="bg-gradient-to-r from-green-50 to-white p-8 rounded shadow-md mb-12">
+      <h2 class="text-3xl font-semibold text-gray-900 mb-6 flex items-center">
+        <Icon
+          name="mdi:feature-search-outline"
+          class="mr-4"
+        />
+        spans 项目的特点
+      </h2>
+      <ul class="list-disc list-inside text-lg text-gray-700 leading-relaxed">
+        <li class="mb-3 hover:text-blue-700 transition duration-300"
+          ><strong class="text-blue-700">开源：</strong>所有项目都在开源许可证下发布，任何人都可以自由使用、修改和分发。</li
+        >
+        <li class="mb-3 hover:text-blue-700 transition duration-300"
+          ><strong class="text-blue-700">社区驱动：</strong>我们鼓励社区成员参与项目开发，贡献代码、文档和建议。</li
+        >
+        <li class="mb-3 hover:text-blue-700 transition duration-300"
+          ><strong class="text-blue-700">高质量：</strong>我们致力于保持高质量的代码和文档，确保每个项目都能顺利运行。</li
+        >
+      </ul>
+    </div>
+
+    <div class="bg-gradient-to-r from-yellow-50 to-white p-8 rounded shadow-md mb-12">
+      <h2 class="text-3xl font-semibold text-gray-900 mb-6 flex items-center">
+        <Icon
+          name="mdi:account-multiple-outline"
+          class="mr-4"
+        />
+        加入我们
+      </h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        如果你对 spans 感兴趣，欢迎加入我们的社区！你可以在 GitHub 上找到我们的项目，提交问题、贡献代码，或者参与讨论。让我们一起创造出色的开源软件！
+      </p>
+      <div class="mt-6">
+        <a
+          href="https://github.com/Dacong-wu/"
+          target="_blank"
+          class="bg-blue-700 text-white py-2 px-4 rounded-md shadow-md hover:bg-blue-800 transition duration-300"
+          >访问我们的 GitHub</a
+        >
+      </div>
+    </div>
+
+    <div class="bg-gradient-to-r from-red-50 to-white p-8 rounded shadow-md">
+      <h2 class="text-3xl font-semibold text-gray-900 mb-6 flex items-center">
+        <Icon
+          name="mdi:email-outline"
+          class="mr-4"
+        />
+        联系方式
+      </h2>
+      <p class="text-lg text-gray-700 leading-relaxed">
+        如果你有任何问题或建议，欢迎通过邮箱联系我：<a
+          href="mailto:dacong@ll1025.cn"
+          class="text-blue-700 underline hover:text-blue-800 transition duration-300"
+          >dacong@ll1025.cn</a
+        >
+      </p>
+    </div>
+  </div>
+  <Footer />
 </Layout>

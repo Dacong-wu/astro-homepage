@@ -1,19 +1,10 @@
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 import { SpansLogo } from '../assets/logos/SpansLogo'
 import { GithubIcon } from '../assets/icons/GithubIcon'
 
-const navbarLinks = [
-  { label: '首页', href: '#home', ariaLabel: 'Home' },
-  { label: '特征', href: '#features', ariaLabel: 'Features' },
-  { label: '常见问题', href: '#FAQ', ariaLabel: 'FAQ' },
-]
-
 export const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false)
-
   return (
-    <nav className="w-full h-20 flex flex-col justify-center items-center fixed bg-customDarkBg1 lg:bg-customDarkBgTransparent z-40 lg:backdrop-blur-xl">
+    <nav className="w-full h-20 flex flex-col justify-center items-center bg-blue-600 backdrop-blur-xl">
       <div className="2xl:w-[1280px] xl:w-10/12 w-11/12 flex justify-between items-center relative">
         <motion.div
           initial={{ opacity: 0 }}
@@ -21,14 +12,12 @@ export const Navbar = () => {
           transition={{ duration: 0.3 }}
           exit={{ opacity: 0 }}
         >
-          <a className="navbar-link" href="#home" aria-label="Home">
-            <div className="flex justify-start items-center grow basis-0">
-              <div className="text-white mr-2 text-6xl">
-                <SpansLogo />
-              </div>
-              <div className="text-white font-bold text-xl">Spans</div>
+          <div className="flex justify-start items-center grow basis-0">
+            <div className="text-gray-100 mr-2 text-6xl">
+              <SpansLogo />
             </div>
-          </a>
+            <div className="text-gray-100 font-bold text-xl">Spans</div>
+          </div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0 }}
@@ -36,10 +25,9 @@ export const Navbar = () => {
           transition={{ duration: 0.3 }}
           exit={{ opacity: 0 }}
         >
-          <div className="grow basis-0 justify-end hidden lg:flex">
+          <div className="grow basis-0 justify-end flex">
             <a
-              className="text-white custom-border-gray rounded-xl
-           bg-customDarkBg2 hover:bg-customDarkBg3  border-gray-700 p-2 text-sm"
+              className="text-gray-100 rounded-xl p-2 text-sm"
               href="https://github.com/Dacong-wu/spans-page"
               target="_blank"
               aria-label="source code"
@@ -48,56 +36,7 @@ export const Navbar = () => {
             </a>
           </div>
         </motion.div>
-        <div
-          className="lg:hidden flex flex-col  px-2 py-3 border-solid border border-gray-600 rounded-md cursor-pointer hover:bg-customDarkBg2"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          <div
-            className={`w-5 h-0.5 bg-gray-500 mb-1 transition-all ${
-              isOpen
-                ? '-rotate-45 translate-y-1.5'
-                : '-rotate-0 translate-y-0'
-            }`}
-          ></div>
-          <div
-            className={`w-5 h-0.5 bg-gray-500 mb-1 transition-all ${
-              isOpen ? 'opacity-0' : 'opacity-100'
-            }`}
-          ></div>
-          <div
-            className={`w-5 h-0.5 bg-gray-500 transition-all ${
-              isOpen ? 'rotate-45 -translate-y-1.5' : 'rotate-0 -translate-y-0'
-            }`}
-          ></div>
-        </div>
       </div>
-      {/* Mobile navbar */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            exit={{ opacity: 0 }}
-          >
-            <div
-              className="flex flex-col mt-16 lg:hidden absolute top-4 left-0  bg-customDarkBg1 z-50 w-full 
-        items-center gap-10 pb-10 border-y border-solid border-customDarkBg3 pt-10
-        "
-            >
-              
-              <a
-                className="text-white custom-border-gray rounded-xl
-           bg-customDarkBg2 hover:bg-customDarkBg3  border-gray-700 py-2 px-6 text-sm flex"
-                href="https://github.com/matt765/Tidestream"
-                target="_blank"
-              >
-                <GithubIcon />
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </nav>
   )
 }
