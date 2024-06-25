@@ -3,9 +3,8 @@ import Layout from "@layouts/Layout.astro";
 import { localizePath } from "astro-i18next";
 import { changeLanguage } from "i18next";
 
-changeLanguage("en");
+changeLanguage("zh");
 
-const title = "Error 404";
 ---
 
 <Layout title="404">
@@ -16,9 +15,9 @@ const title = "Error 404";
 					<span class="sr-only">Error</span>
 					<span class="text-primary">404</span>
 				</h2>
-				<p class="text-3xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
-				<p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">But dont worry, you can find plenty of other things on our homepage.</p>
-				<a rel="noopener noreferrer" href={localizePath("/")} class="btn ml-4">Back to homepage</a>
+				<p class="text-3xl font-semibold md:text-3xl">对不起，我们找不到这一页。</p>
+				<p class="mt-4 mb-8 text-lg text-muted dark:text-slate-400">但别担心，你可以在我们的主页上找到很多其他东西。</p>
+				<a rel="noopener noreferrer" href={localizePath("/")} class="btn ml-4">回到主页</a>
 			</div>
 		</div>
 	</section>
