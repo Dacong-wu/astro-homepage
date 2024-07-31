@@ -29,9 +29,10 @@ const makeTitle = title ? `${title} | Spans` : t('seo.title');
     <link rel="icon" href="/favicon.ico" />
     <link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32" />
     <link rel="icon" href="/favicon-16x16.png" type="image/png" sizes="16x16" />
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
     <meta name="theme-color" content="#ffffff" />
+    <meta property="og:site_name" content={t('seo.title')} />
     <HeadHrefLangs />
 
     <ViewTransitions />
